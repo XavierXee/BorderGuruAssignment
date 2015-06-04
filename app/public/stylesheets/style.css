@@ -1,0 +1,133 @@
+/*
+	----------------------------------------------------------------------------
+	Basic DOM elements style
+
+*/
+body {
+  padding: 50px;
+  font: 14px "Century Gothic", Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+}
+h1 {
+	font: 24px "Century Gothic", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #FFFFFF ;
+    text-align: center ;
+}
+input {
+	color: #000000 ;
+}
+a {
+  color: #FFFFFF;
+}
+button {
+    border-radius: 75px;
+	background-color: #FFFFFF;
+	color: #e67e22;
+	padding: 10px 20px 10px 20px;
+	border: none;
+	width: 100%;
+}
+/*
+	----------------------------------------------------------------------------
+	Boostrap theme style
+
+*/
+.jumbotron {
+	background-color: #e67e22;
+}
+
+.dropdown {
+	display: inline;
+}
+
+.btn-default {
+    border-radius: 75px;
+	background-color: #FFFFFF;
+	color: #e67e22;
+	padding: 10px 20px 10px 20px;
+	border: none;
+}
+/*
+	----------------------------------------------------------------------------
+	Other Integrated DOM ekement style
+
+*/
+#databaseFormResponse{
+	text-align: center;
+	font-size: 22px;
+}
+#orders {
+	text-align: center;
+}
+#order {
+	text-align: center;
+}
+.order {
+    border-radius: 75px;
+	background-color: #FFFFFF;
+	color: #e67e22;
+	padding: 10px 20px 10px 20px;
+	border: none;
+	width: 30px;
+	height: 40px;
+	margin: 10px;
+	display: inline-block;
+}
+.order:hover {
+    background-color: #D3D3D3;
+} 
+.orderPropList {
+	font-size: 18px;
+	margin-left: -50px;
+	text-align: center;
+}
+.orderProperties {
+	height: 100px;
+}
+.orderProp {
+	margin: 0px;
+	list-style-type:none;
+}
+.deleteOrder {
+	border-radius: 15px;
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	width: 90px;
+	height: 40px;
+	border: 2px solid;
+}
+.deleteOrder:hover {
+    background-color: #D3D3D3;
+} 
+#iconsMenu{
+	text-align: center;
+}
+.iconMenu{
+	border-radius: 15px;
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+	width: 80px;
+	height: 70px;
+	border: 2px solid;
+}
+.iconMenu:hover {
+    background-color: #D3D3D3;
+} 
+.input-title {
+	font-size: 16px;
+	margin: 10px;
+}
+.ordereditem{
+	margin: 10px ;
+	font-size: 16px ;
+}
+.result-text {
+	text-align: center;
+	font-size: 22px;
+}
+/*
+	----------------------------------------------------------------------------
+*/

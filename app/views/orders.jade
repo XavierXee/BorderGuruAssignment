@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	.container
+		.jumbotron(style="text-align:center;")
+			h1= apptitle
+			p.lead #{title}
+			.panel.panel-default
+				.panel-body
+					.list-group
+						each order, i in orders
+							a(href="/user?id=#{order.orderId}" class="list-group-item")
+								h4(class="list-group-item-heading") #{order.orderId}
+								p(class="list-group-item-text") #{order.companyName}
+								p(class="list-group-item-text") #{order.customerAdress}
+								p(class="list-group-item-text") #{order.orderedItem}

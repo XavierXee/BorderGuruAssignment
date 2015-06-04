@@ -1,0 +1,79 @@
+extends layout
+
+block content
+	.container
+		.jumbotron
+			.container
+				h1= title
+				.col-sm-1.col-md-2.col-lg-3
+				.col-xs-12.col-sm-10.col-md-8.col-lg-6
+					h1
+						i(class="fa fa-file-text fa-2x")
+					#iconsMenu(ng-controller="subMenu as subm")
+						.iconMenu(ng-click="subm.loadItemsList()")
+							i(class="fa fa-cart-plus fa-3x")
+						.iconMenu(ng-click="subm.loadDataBaseForm()")
+							i(class="fa fa-database fa-3x")
+						#subMenuContentItemList(ng-show="subm.showOrderedItemList")
+							.ordereditem(ng-repeat="orderedItem in subm.itemsList")
+								{{orderedItem.count}} X {{orderedItem.name}} 
+						#subMenuContentDatabase(ng-show="subm.showDatabaseForm")
+							br
+							br
+							#databaseFormResponse {{subm.reqReturn}}
+							br
+							br
+							button.btn.btn-default(ng-click="subm.loadSampleData()" type="submit" style="width:150px") Load Sample Data
+							br
+							br
+					br
+					#menu
+						#paramName.dropdown(ng-controller="OrdersReqParamName as paramName")
+							button(class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true") {{paramName.titleText}}
+								span(class="caret")
+							ul(class="dropdown-menu" role="menu1" aria-labelledby="dropdownMenu1")
+								li(role="presentation")
+									a(ng-click="paramName.buildParamName('companyName')" role="menuitem1" param="companyName" tabindex="-1" href="#") view orders from a company 
+								li(role="presentation")
+									a(ng-click="paramName.buildParamName('customerAdress')" role="menuitem1" param="customerAdress" tabindex="-1" href="#") view orders to a customer adress 
+								li(role="presentation")
+									a(ng-click="paramName.buildParamName('orderId')" role="menuitem1" param="orderId" tabindex="-1" href="#") view particular order 
+						br
+						br
+						#paramValue.dropdown(ng-controller="OrdersReqParamValue as paramValue")
+							button(class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true") {{paramValue.titleText}}
+								span(class="caret")
+							ul(class="dropdown-menu" role="menu2" aria-labelledby="dropdownMenu2")
+								li(ng-repeat="valueItem in paramValue.valueList" role="presentation")
+									a(ng-click="paramValue.buildParamValue(valueItem)" role="menuitem2" paramValue="{{valueItem.name}}" tabindex="-1" href="#") {{valueItem.name}}
+
+						br
+						br
+					#main(ng-controller="MainController as main")
+						button(class="go" ng-click="main.go()") GO
+					br
+					br
+					.container
+						.col-sm-1.col-md-2.col-lg-3
+						.col-xs-12.col-sm-10.col-md-8.col-lg-6
+							#orders(ng-controller="OrdersController as orders")
+								.result-text {{orders.titleText}}
+								br
+								br
+								.order(ng-repeat="order in orders.ordersList" ng-mouseover="orders.viewOrder(order)" ng-mouseout="orders.hideOrder()")
+					.container
+						.col-sm-1.col-md-2.col-lg-3
+						.col-xs-12.col-sm-10.col-md-8.col-lg-6
+							#order(ng-controller="OrderController as order")
+								.deleteOrder(ng-show="order.deleteOrder" ng-click="order.triggerDeleteOrder()") Delete
+								div.orderProperties 
+									{{order.order.orderId}}
+									br
+									{{order.order.orderedItem}} 
+									br
+									{{order.order.companyName}} 
+									br
+									{{order.order.customerAdress}}
+
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js")
+	script(src="/javascripts/main.js")

@@ -1,0 +1,30 @@
+a) Why did you pick your particular design? What assumptions did you make, and what trade-offs did you consider?
+
+	Design I picked is customer oriented. With the will of making a solution within a short time
+	I built a user interface based on the requested features with a simple access to the wanted
+	datas.
+	Major trade-off I considered was to separate features based on orders list (or single order)
+	from features focusing on ordered items. 
+	My assumption was operations 1 to 3 were regular operations, and operation 4 was a more
+	specific one.
+	So we have a main interface from where users can access a list
+	of orders from a particular company (operation 1), to a particular adress (operation 2), 
+	or access a specific order by its orderId and later delete it (operation 3). 
+	Then there is a "show ordered items" button, leading to an other interface where the list
+	of sorted ordered items would be displayed (operation 4).
+
+b) What do you like (and dislike) about Node/Javascript compared to other programming languages?
+
+	First of all, what I like the most in Node/Javascript is the fact that these are nowadays
+	technologies. It seems to me that Node/Javascript environments fit technical requirements
+	of our time with great performences, simple and fast deployment and an orientation to quick
+	features development. It turns out to be an adequate solution to more and more nowadays 
+	problematics for websites, web-applications, or "Software As A Service" products.
+
+	Plus Javascript is actually my favorite programming language among others. Its unorthodox architecture
+	and philosophy, altought considered odd and messy by many developers, is fascinating to me.
+	In my opinion, majors weaknesses of this environment is its potential lack of maintainability
+	due to the inherent permissiveness of Javascript. Moreover, it sometimes can be tedious to 
+	debug Javascript apps with the lack of a complete error stack. 
+	Nevertheless recent libraries and frameworks such as AngularJS or Backbone are about 
+	to lower these weaknesses in many aspects.
